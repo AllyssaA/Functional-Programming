@@ -1,4 +1,8 @@
-var dataset = require('./tech-track-dataset.json');
+import fetch from 'node-fetch';
 
-console.log(dataset);
+const response = await fetch('./tech-track-dataset.json')
+const data = await response.json();
 
+//var dataset = require('./tech-track-dataset.json');
+
+console.log(data);
