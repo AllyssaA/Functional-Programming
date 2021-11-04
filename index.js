@@ -15,21 +15,30 @@ const getAnswers = (question) => {
 /* Utilities */
 function removeCapitals(string) {
     if(typeof string === 'string') {
-        return string.toLocaleLowerCase();
+        return string.toLocaleLowerCase()
     }
     else {
         return string;
     }
 }
 
-console.log(removeCapitals);
+const cleanData = () => {
+    return new Promise((resolve, reject) => {
+        const dataset = DATASET
+        resolve(dataset)
+    })
+}
+
+console.log(removeCapitals)
 
 
-console.log(getAnswers('Op welke verdieping van het TTH studeer je het liefst?'));
+console.log(getAnswers('Als je later een auto zou kopen, van welk merk zou deze dan zijn?'))
 
-let results = removeCapitals(DATASET[31]['Op welke verdieping van het TTH studeer je het liefst?'])
+let results = removeCapitals(DATASET[31]['Als je later een auto zou kopen, van welk merk zou deze dan zijn?'])
 
-console.log(results);
+console.log(results)
+
+/* Create foreach loop with all answers */
 
 
 
