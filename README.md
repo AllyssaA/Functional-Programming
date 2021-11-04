@@ -12,6 +12,7 @@ Clean data, transform data, write functional programming patterns
 * Functional programming paradigm
 * Cleaning up data
 * Usage of promise
+* Usage of fetch
 
 
 # Demo
