@@ -1,8 +1,7 @@
-// Data in variable dataset
+// Initialize dataset
 const DATASET = require('./tech-track-dataset.json');
 
-//let listAnswers = getAnswers(DATASET, "Op welke verdieping van het TTH studeer je het liefst?")
-//console.log(listAnswers)
+// Promise function called cleanData to process data
 function cleanData() {
     return new Promise((resolve, reject) => {
         let dataset = DATASET
@@ -20,7 +19,9 @@ const getSpecificAnswer = (key, value) => {
     return DATASET[key][value]
 }
 
-/* Utilities */
+//console.log(getSpecificAnswer(5, 'Als je later een auto zou kopen, van welk merk zou deze dan zijn?'))
+
+/* Utility to remove all capital letters */
 function removeCapitals(string) {
     if(typeof string === 'string') {
         return string.toLowerCase()
@@ -30,30 +31,35 @@ function removeCapitals(string) {
     }
 }
 
+/* Utility to replace empty answers with "Geen antwoord" */
+function emptyAnswer(string) {
+    if(typeof string === 'string' && string.length < 1) {
+        return "Geen antwoord"
+    }
+    else{
+        return string
+    }
+}
 
+/* Testing functions 
 
+console.log(getAnswers('Als je later een auto zou kopen, van welk merk zou deze dan zijn?'))
 
+let results = removeCapitals(DATASET[31]['Als je later een auto zou kopen, van welk merk zou deze dan zijn?'])
+let results2 = removeCapitals(DATASET[31]['Op welke verdieping van het TTH studeer je het liefst?'])
 
-
-//console.log(getAnswers('Als je later een auto zou kopen, van welk merk zou deze dan zijn?'))
-
-//let results = removeCapitals(DATASET[31]['Als je later een auto zou kopen, van welk merk zou deze dan zijn?'])
-//let results2 = removeCapitals(DATASET[31]['Op welke verdieping van het TTH studeer je het liefst?'])
-
-//console.log(getAnswers)
-//console.log(getSpecificAnswer(4,'Op welke verdieping van het TTH studeer je het liefst?'))
-//console.log(results)
-//console.log(results)
-
-
-/* TODO Create foreach loop with all answers */
+console.log(getAnswers)
+console.log(getSpecificAnswer(4,'Op welke verdieping van het TTH studeer je het liefst?'))
+console.log(results)
+console.log(results)
+*/
 
 cleanData()
     .then((data) => {
         return data.map(object => {
           Object.keys(object).forEach(key => {
-              object[key] = removeCapitals(object[key])
-              
+              object[key] = removeCapitals(object[key]),
+              object[key] = emptyAnswer(object[key])              
           })  
           return object
         })
