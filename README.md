@@ -8,7 +8,14 @@ Write a program that parses a given dataset using the principles of functional p
 ## Goals
 Clean data, transform data, write functional programming patterns
 
+# Features
+* Functional programming paradigm
+* Cleaning up data
+* Usage of promise
 
+
+# Demo
+![image](https://user-images.githubusercontent.com/74106079/140418117-903d61fd-1253-4797-8ed4-d74bb340204f.png)
 
 # Installation
 
@@ -26,12 +33,6 @@ Start
 ```
 node index.js
 ```
-
-# Demo
-![image](https://user-images.githubusercontent.com/74106079/140418117-903d61fd-1253-4797-8ed4-d74bb340204f.png)
-
-
-
 
 # Documentation
 You can read about my process through this seminar in the wiki. 
