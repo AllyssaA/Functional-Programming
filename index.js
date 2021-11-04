@@ -23,7 +23,7 @@ const getSpecificAnswer = (key, value) => {
 /* Utilities */
 function removeCapitals(string) {
     if(typeof string === 'string') {
-        return string.toLocaleLowerCase()
+        return string.toLowerCase()
     }
     else {
         return string;
