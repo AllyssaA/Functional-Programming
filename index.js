@@ -12,9 +12,24 @@ const getAnswers = (question) => {
 }
 
 
+/* Utilities */
+function removeCapitals(string) {
+    if(typeof string === 'string') {
+        return string.toLocaleLowerCase();
+    }
+    else {
+        return string;
+    }
+}
+
+console.log(removeCapitals);
+
+
 console.log(getAnswers('Op welke verdieping van het TTH studeer je het liefst?'));
 
+let results = removeCapitals(DATASET[31]['Op welke verdieping van het TTH studeer je het liefst?'])
 
+console.log(results);
 
 
 
