@@ -25,3 +25,7 @@ node index.js
 You can read about my process through this seminar in the wiki. 
 
 
+# License
+[MIT](https://github.com/AllyssaA/Functional-Programming/blob/main/LICENSE)
+
+
