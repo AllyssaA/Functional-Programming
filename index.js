@@ -47,10 +47,10 @@ function emptyAnswer(string) {
 function correctSpelling(string) {
     let words = ['frontend developer', 'front end developer']
     if(typeof string == words){
-        return "Front-end developer"
+        return "front-end developer"
     }
     else {
-        return "nothing changed"
+        return string
     }
 
 }
@@ -74,8 +74,8 @@ cleanData()
         return data.map(object => {
           Object.keys(object).forEach(key => {
               object[key] = removeCapitals(object[key]),
-              object[key] = emptyAnswer(object[key])
-              //object[key] = correctSpelling(object[key])             
+              object[key] = emptyAnswer(object[key]),
+              object[key] = correctSpelling(object[key])             
           })  
           return object
         })
