@@ -9,17 +9,15 @@ function cleanData() {
     })
 }
 
-// Get all values 
-// const getAnswers = (question) => {
-//     const permutableData = Object.assign({}, DATASET)
-//     return Object.entries(permutableData).forEach(([key, value]) => console.log(`${key}, ${(value[question])}`))
-// }
-
+// Arrow function
 const getSpecificAnswer = (key, value) => {
     return DATASET[key][value]
 }
 
-//console.log(getSpecificAnswer(5, 'Als je later een auto zou kopen, van welk merk zou deze dan zijn?'))
+// Regular function
+function getSpecificAnswer2(key, value){
+    return DATASET[key][value]
+}
 
 /* Utility to remove all capital letters */
 function removeCapitals(string) {
@@ -43,9 +41,9 @@ function emptyAnswer(string) {
 }
 
 
-/* TODO Utility to keep front-end developer consistent*/
+/* TODO DOES NOT WORK Utility to keep front-end developer consistent*/
 function correctSpelling(string) {
-    let words = ['frontend developer', 'front end developer']
+    const words = ['frontend developer', 'front end developer']
     if(typeof string == words){
         return "front-end developer"
     }
@@ -57,6 +55,7 @@ function correctSpelling(string) {
 
 /* Testing functions 
 
+console.log(getSpecificAnswer(5, 'Als je later een auto zou kopen, van welk merk zou deze dan zijn?'))
 console.log(getAnswers('Als je later een auto zou kopen, van welk merk zou deze dan zijn?'))
 
 let results = removeCapitals(DATASET[31]['Als je later een auto zou kopen, van welk merk zou deze dan zijn?'])
@@ -65,8 +64,9 @@ let results2 = removeCapitals(DATASET[31]['Op welke verdieping van het TTH stude
 console.log(getAnswers)
 console.log(getSpecificAnswer(4,'Op welke verdieping van het TTH studeer je het liefst?'))
 console.log(results)
-
+console.log(getSpecificAnswer(4,'Op welke verdieping van het TTH studeer je het liefst?'))
 */
+
 
 
 cleanData()
@@ -96,8 +96,3 @@ cleanData()
     .catch(err => {
         console.log(err)
     })
-    
-
-
-
-
