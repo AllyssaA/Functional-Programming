@@ -36,9 +36,22 @@ function emptyAnswer(string) {
     if(typeof string === 'string' && string.length < 1) {
         return "Geen antwoord"
     }
-    else{
+    else {
         return string
     }
+}
+
+
+/* TODO Utility to keep front-end developer consistent*/
+function correctSpelling(string) {
+    let words = ['frontend developer', 'front end developer']
+    if(typeof string == words){
+        return "Front-end developer"
+    }
+    else {
+        return "nothing changed"
+    }
+
 }
 
 /* Testing functions 
@@ -54,12 +67,14 @@ console.log(results)
 console.log(results)
 */
 
+
 cleanData()
     .then((data) => {
         return data.map(object => {
           Object.keys(object).forEach(key => {
               object[key] = removeCapitals(object[key]),
-              object[key] = emptyAnswer(object[key])              
+              object[key] = emptyAnswer(object[key])
+              //object[key] = correctSpelling(object[key])             
           })  
           return object
         })
