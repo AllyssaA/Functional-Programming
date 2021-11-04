@@ -23,6 +23,7 @@ const getSpecificAnswer = (key, value) => {
 
 /* Utility to remove all capital letters */
 function removeCapitals(string) {
+    // === (Triple equals) is a strict equality comparison operator in JavaScript,
     if(typeof string === 'string') {
         return string.toLowerCase()
     }
@@ -64,7 +65,7 @@ let results2 = removeCapitals(DATASET[31]['Op welke verdieping van het TTH stude
 console.log(getAnswers)
 console.log(getSpecificAnswer(4,'Op welke verdieping van het TTH studeer je het liefst?'))
 console.log(results)
-console.log(results)
+
 */
 
 
@@ -83,7 +84,8 @@ cleanData()
         return data.map(object => {
             const person = {
                 car: object['Als je later een auto zou kopen, van welk merk zou deze dan zijn?'],
-                career: object['Wat wil je worden als je groot bent?']
+                career: object['Wat wil je worden als je groot bent?'],
+                motivation: object['Op een schaal van 1 tot 10, hoeveel zin heb je in de Tech Track?']
             }
             return person
         })
