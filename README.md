@@ -5,7 +5,7 @@ The goal of this seminar is to learn how to clean data using functional programm
 ## Assignment 
 Write a program that parses a given dataset using the principles of functional programming, while documenting the proces on GitHub
 
-# Goals
+## Goals
 Clean data, transform data, write functional programming patterns
 
 
